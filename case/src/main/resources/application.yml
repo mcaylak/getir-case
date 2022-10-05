@@ -1,0 +1,14 @@
+spring:
+  profiles:
+    active: local
+logging:
+  level:
+    com:
+      getir: ERROR
+    org:
+      springframework:
+        security: info
+        web: debug
+      hibernate: ERROR
+  file:
+    name: getir.log
