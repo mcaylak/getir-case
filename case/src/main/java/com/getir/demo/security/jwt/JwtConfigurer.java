@@ -1,4 +1,4 @@
-package com.getir.demo.security;
+package com.getir.demo.security.jwt;
 
 import org.springframework.security.config.annotation.SecurityConfigurerAdapter;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
