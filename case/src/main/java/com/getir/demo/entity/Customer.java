@@ -11,12 +11,11 @@ import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Set;
 
 import static java.util.stream.Collectors.toList;
 
@@ -30,19 +29,24 @@ import static java.util.stream.Collectors.toList;
 @Getter
 @Setter
 @Entity(name = "customers")
-public class Customer implements UserDetails {
+public class Customer extends AbstractBaseEntityId implements UserDetails {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id", nullable = false)
-    private Long id;
-
+    @Column(name = "name")
     private String name;
+
+    @Column(name = "username")
     private String username;
+
+    @Column(name = "password")
     private String password;
 
+    @Column(name = "email")
+    private String email;
     @ElementCollection(fetch = FetchType.EAGER)
     private List<String> roles = new ArrayList<>();
+
+    @OneToMany(mappedBy = "customer")
+    private Set<Order> orders;
 
 
     @Override
