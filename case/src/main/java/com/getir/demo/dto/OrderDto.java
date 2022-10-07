@@ -1,8 +1,5 @@
 package com.getir.demo.dto;
 
-import com.getir.demo.entity.Address;
-import com.getir.demo.entity.Book;
-import com.getir.demo.entity.Customer;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -24,10 +21,10 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 public class OrderDto {
 
-    private Customer customer;
-    private Book book;
+    private CustomerDto customer;
+    private BookDto book;
     private Long totalPrice;
     private LocalDateTime orderDate;
-    private Address address;
+    private AddressDto address;
 
 }

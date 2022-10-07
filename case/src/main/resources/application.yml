@@ -1,4 +1,6 @@
 spring:
+  security:
+    ignored: /swagger-resources/**
   profiles:
     active: local
 logging:
@@ -12,3 +14,9 @@ logging:
       hibernate: ERROR
   file:
     name: getir.log
+
+server:
+  servlet-path: /loop-service
+
+
+

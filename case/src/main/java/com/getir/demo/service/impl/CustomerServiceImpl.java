@@ -22,7 +22,6 @@ public class CustomerServiceImpl implements CustomerService {
 
     private CustomerRepository customerRepository;
     private CustomerMapper customerMapper;
-
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 
     @Override

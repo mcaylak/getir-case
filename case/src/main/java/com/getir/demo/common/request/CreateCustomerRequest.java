@@ -5,6 +5,7 @@ import lombok.Setter;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 /**
  * CreateCustomerRequest
@@ -16,9 +17,13 @@ import javax.validation.constraints.Pattern;
 @Setter
 public class CreateCustomerRequest {
 
+    @Size(min = 3, message = "Name must be at least 3 characters")
+    @Size(max = 20, message = "Name must be no more than 20 characters")
     @NotBlank(message = "name is must not be null")
     private String name;
 
+    @Size(min = 3, message = "Username must be at least 3 characters")
+    @Size(max = 20, message = "Username must be no more than 20 characters")
     @NotBlank(message = "username is must not be null")
     private String username;
 
@@ -27,7 +32,7 @@ public class CreateCustomerRequest {
             message = "Password should be minimum eight characters, at least one letter and one number")
     private String password;
 
-    @NotBlank(message = "email is must not be null")
+    @NotBlank(message = "Email is must not be null")
     private String email;
 
 }

@@ -11,6 +11,5 @@ import lombok.Getter;
 public class ErrorCode {
     public static final Integer OK = 200;
     public static final Integer SERVER_ERROR = 500;
-    public static final Integer INVALID_PARAM_ERROR = 600;
-
+    public static final Integer CUSTOMER_ID_NOT_MATCH_WITH_TOKEN = 9000000;
 }

@@ -3,7 +3,7 @@ package com.getir.demo.security.controller;
 import com.getir.demo.common.request.LoginCustomerRequest;
 import com.getir.demo.common.response.LoginResponse;
 import com.getir.demo.common.response.ResponseBean;
-import com.getir.demo.security.service.LoginService;
+import com.getir.demo.security.service.AuthService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -23,11 +23,11 @@ import javax.validation.Valid;
 @RequestMapping("api/login")
 public class LoginController {
 
-    private LoginService loginService;
+    private AuthService authService;
 
     @GetMapping
     public ResponseBean<LoginResponse> login(@Valid @RequestBody LoginCustomerRequest loginCustomerRequest) {
-        return new ResponseBean<>(loginService.customerLogin(loginCustomerRequest));
+        return new ResponseBean<>(authService.customerLogin(loginCustomerRequest));
     }
 
 

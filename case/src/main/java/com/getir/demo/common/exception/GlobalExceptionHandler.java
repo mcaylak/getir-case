@@ -26,8 +26,15 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
     @ResponseStatus(value = HttpStatus.OK)
     @ResponseBody
     public ResponseEntity<ResponseBean<Object>> exceptionHandler(Exception e) {
-        ResponseBean<Object> responseBean = new ResponseBean(ErrorCode.SERVER_ERROR, e.getMessage());
+        ResponseBean<Object> responseBean = new ResponseBean<>(ErrorCode.SERVER_ERROR, e.getMessage());
         return new ResponseEntity<>(responseBean, HttpStatus.OK);
+    }
+
+    @ExceptionHandler(value = {CustomerIdNotMatchWithTokenException.class})
+    @ResponseStatus(value = HttpStatus.OK)
+    @ResponseBody
+    public ResponseBean<Object> entityAlreadyExistHandler(CustomerIdNotMatchWithTokenException e) {
+        return new ResponseBean<>(ErrorCode.CUSTOMER_ID_NOT_MATCH_WITH_TOKEN, e.getMessage());
     }
 
 }
