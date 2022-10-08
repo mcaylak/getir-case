@@ -37,4 +37,11 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
         return new ResponseBean<>(ErrorCode.CUSTOMER_ID_NOT_MATCH_WITH_TOKEN, e.getMessage());
     }
 
+    @ExceptionHandler(value = {IdNotFoundException.class})
+    @ResponseStatus(value = HttpStatus.OK)
+    @ResponseBody
+    public ResponseBean<Object> idNotFoundException(IdNotFoundException e) {
+        return new ResponseBean<>(ErrorCode.CUSTOMER_ID_NOT_MATCH_WITH_TOKEN, e.getMessage());
+    }
+
 }

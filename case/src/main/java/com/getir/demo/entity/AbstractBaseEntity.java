@@ -25,10 +25,11 @@ import java.util.Date;
 @EntityListeners(AuditingEntityListener.class)
 public class AbstractBaseEntity {
 
-    @Column(updatable = false)
+    @Column(updatable = false, nullable = false)
     @CreatedDate
     private Date createdDate;
 
+    @Column(updatable = false)
     @LastModifiedDate
     private Date updatedDate;
 

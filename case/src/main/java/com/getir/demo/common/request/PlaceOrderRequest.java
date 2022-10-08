@@ -7,6 +7,7 @@ import javax.validation.constraints.Max;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.List;
 
 /**
  * PlaceOrderRequest
@@ -21,8 +22,7 @@ public class PlaceOrderRequest {
     @NotNull(message = "Customer Id must not be null")
     private Long customerId;
 
-    @NotNull(message = "Book Id must not be null")
-    private Long bookId;
+    private List<OrderEntryRequest> orderEntryRequests;
 
     @NotNull(message = "Total price must not be null")
     @Max(value = Long.MAX_VALUE, message = "Total price cannot exceed the max value")

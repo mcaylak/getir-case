@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 /**
  * OrderDto
@@ -21,8 +22,9 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 public class OrderDto {
 
+    private Long id;
     private CustomerDto customer;
-    private BookDto book;
+    private List<OrderEntryDto> orderEntryDtoList;
     private Long totalPrice;
     private LocalDateTime orderDate;
     private AddressDto address;

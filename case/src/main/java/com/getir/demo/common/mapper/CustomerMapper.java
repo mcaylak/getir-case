@@ -20,7 +20,9 @@ public class CustomerMapper {
     private final ModelMapper mapper;
 
     public CustomerDto mapToDto(Customer entity) {
-        return this.mapper.map(entity, CustomerDto.class);
+        CustomerDto customerDto = this.mapper.map(entity, CustomerDto.class);
+        customerDto.setPassword(null);
+        return customerDto;
     }
 
     public Customer mapToEntity(CustomerDto dto) {

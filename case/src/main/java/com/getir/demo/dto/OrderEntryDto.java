@@ -1,6 +1,5 @@
 package com.getir.demo.dto;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -8,9 +7,9 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 /**
- * Customer
+ * OrderEntryDto
  * Author: mcaylak
- * Since : 6.10.2022
+ * Since : 8.10.2022
  */
 
 @Getter
@@ -18,12 +17,11 @@ import lombok.Setter;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class CustomerDto {
+public class OrderEntryDto {
 
-    private Long id;
-    private String name;
-    private String username;
-    private String password;
-    private String email;
+    private OrderDto order;
+    private BookDto book;
+    private Long quantity;
+    private Long entryPrice;
 
 }

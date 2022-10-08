@@ -8,6 +8,8 @@ import com.getir.demo.service.AddressService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
+
 /**
  * AddressServiceImpl
  * Author: mcaylak
@@ -22,6 +24,7 @@ public class AddressServiceImpl implements AddressService {
     private AddressMapper addressMapper;
 
     @Override
+    @Transactional
     public AddressDto createAddress(PlaceOrderRequest orderRequest) {
         AddressDto addressDto = AddressDto.builder()
                 .name(orderRequest.getName())

@@ -1,11 +1,13 @@
 package com.getir.demo.common.mapper;
 
 import com.getir.demo.dto.OrderDto;
+import com.getir.demo.dto.OrderEntryDto;
 import com.getir.demo.entity.Order;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -20,9 +22,16 @@ import java.util.stream.Collectors;
 public class OrderMapper {
 
     private final ModelMapper mapper;
+    private final OrderEntryMapper orderEntryMapper;
 
     public OrderDto mapToDto(Order entity) {
-        return this.mapper.map(entity, OrderDto.class);
+        List<OrderEntryDto> orderEntryDtoList = new ArrayList<>();
+        if (entity.getOrderEntries() != null) {
+            orderEntryDtoList = orderEntryMapper.map2DtoList(entity.getOrderEntries());
+        }
+        OrderDto orderDto = this.mapper.map(entity, OrderDto.class);
+        orderDto.setOrderEntryDtoList(orderEntryDtoList);
+        return orderDto;
     }
 
     public Order mapToEntity(OrderDto dto) {

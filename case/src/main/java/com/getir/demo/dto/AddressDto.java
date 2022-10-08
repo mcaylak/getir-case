@@ -19,6 +19,7 @@ import lombok.Setter;
 @AllArgsConstructor
 public class AddressDto {
 
+    private Long id;
     private String name;
     private String surname;
     private String postalCode;
