@@ -12,4 +12,8 @@ public interface BookService {
     BookDto createBook(BookCreateRequest bookCreateRequest);
 
     BookDto updateBookStock(Long bookId, Long stock);
+
+    BookDto reduceStock(Long bookId, Long reduceStock);
+
+    Long getBookStockByBookId(Long bookId);
 }

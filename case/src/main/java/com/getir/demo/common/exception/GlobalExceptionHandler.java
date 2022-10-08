@@ -44,4 +44,11 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
         return new ResponseBean<>(ErrorCode.CUSTOMER_ID_NOT_MATCH_WITH_TOKEN, e.getMessage());
     }
 
+    @ExceptionHandler(value = {InsufficientStockException.class})
+    @ResponseStatus(value = HttpStatus.OK)
+    @ResponseBody
+    public ResponseBean<Object> insufficientStockException(InsufficientStockException e) {
+        return new ResponseBean<>(ErrorCode.INSUFFICIENT_STOCK_EXCEPTION, e.getMessage());
+    }
+
 }
