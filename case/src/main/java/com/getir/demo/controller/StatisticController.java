@@ -1,6 +1,6 @@
 package com.getir.demo.controller;
 
-import com.getir.demo.common.response.CustomerMonthlyStatisticsResponse;
+import com.getir.demo.common.projection.CustomerMonthlyStatisticsResponse;
 import com.getir.demo.common.response.ResponseBean;
 import com.getir.demo.service.OrderService;
 import lombok.AllArgsConstructor;

@@ -1,7 +1,7 @@
 package com.getir.demo.service;
 
+import com.getir.demo.common.projection.CustomerMonthlyStatisticsResponse;
 import com.getir.demo.common.request.PlaceOrderRequest;
-import com.getir.demo.common.response.CustomerMonthlyStatisticsResponse;
 import com.getir.demo.dto.OrderDto;
 import org.springframework.data.domain.Page;
 

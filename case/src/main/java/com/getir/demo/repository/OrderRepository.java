@@ -1,6 +1,6 @@
 package com.getir.demo.repository;
 
-import com.getir.demo.common.response.CustomerMonthlyStatisticsResponse;
+import com.getir.demo.common.projection.CustomerMonthlyStatisticsResponse;
 import com.getir.demo.entity.Order;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

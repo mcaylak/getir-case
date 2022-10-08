@@ -1,4 +1,4 @@
-package com.getir.demo.common.response;
+package com.getir.demo.common.projection;
 
 
 /**
