@@ -26,6 +26,22 @@ vision operations.
   Address table holds the address information of each order.
 - [**Book Table**]
   The information of all the books is kept here, it has no relation with any table.
+  
+## Response Types 
+- All endpoints have a single response type.
+- Depending on the response type of the relevant endpoint, the model in the data may change.
+
+```JSON
+{
+    "code": 200,
+    "data": [
+        {
+        }
+    ],
+    "message": null,
+    "timeStamp": 1665324335570
+}
+```
 
 
 ## Requirements
