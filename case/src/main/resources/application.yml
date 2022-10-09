@@ -1,6 +1,4 @@
 spring:
-  security:
-    ignored: /swagger-resources/**
   profiles:
     active: local
 logging:
