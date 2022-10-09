@@ -5,12 +5,10 @@ import com.getir.demo.common.response.LoginResponse;
 import com.getir.demo.common.response.ResponseBean;
 import com.getir.demo.security.service.AuthService;
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import javax.validation.Valid;
 
 /**
  * LoginController
@@ -25,8 +23,8 @@ public class LoginController {
 
     private AuthService authService;
 
-    @GetMapping
-    public ResponseBean<LoginResponse> login(@Valid @RequestBody LoginCustomerRequest loginCustomerRequest) {
+    @PostMapping
+    public ResponseBean<LoginResponse> login(@RequestBody LoginCustomerRequest loginCustomerRequest) {
         return new ResponseBean<>(authService.customerLogin(loginCustomerRequest));
     }
 

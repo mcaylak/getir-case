@@ -1,5 +1,6 @@
 package com.getir.demo.common.request;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,6 +17,7 @@ import javax.validation.constraints.Size;
 
 @Getter
 @Setter
+@Builder
 public class BookCreateRequest {
 
     @Size(min = 3, message = "Name must be at least 3 characters")

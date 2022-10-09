@@ -15,8 +15,3 @@ logging:
   file:
     name: getir.log
 
-server:
-  servlet-path: /loop-service
-
-
-

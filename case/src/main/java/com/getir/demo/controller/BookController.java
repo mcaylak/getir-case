@@ -27,7 +27,7 @@ public class BookController {
     private BookService bookService;
 
     @PostMapping("create")
-    public ResponseBean<BookDto> createCustomer(@Valid @RequestBody BookCreateRequest bookCreateRequest) {
+    public ResponseBean<BookDto> createBook(@Valid @RequestBody BookCreateRequest bookCreateRequest) {
         return new ResponseBean<>(bookService.createBook(bookCreateRequest));
     }
 
