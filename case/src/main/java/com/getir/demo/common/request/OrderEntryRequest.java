@@ -1,5 +1,6 @@
 package com.getir.demo.common.request;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -14,6 +15,7 @@ import javax.validation.constraints.NotNull;
 
 @Getter
 @Setter
+@Builder
 public class OrderEntryRequest {
 
     @NotNull(message = "Book id must not be null")

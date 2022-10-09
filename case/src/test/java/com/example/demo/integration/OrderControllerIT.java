@@ -52,7 +52,7 @@ public class OrderControllerIT {
         headers.add("Authorization", "Bearer " + getAuthorizationToken());
 
         RequestEntity requestEntity = new RequestEntity(null, headers,
-                HttpMethod.GET, new URI(createURLWithPort("/api/order/findAllByCustomerId?customerId=1")));
+                HttpMethod.GET, new URI(createURLWithPort("/api/order/findAllByCustomerId?customerId=0")));
 
         ResponseEntity<String> responseEntity =
                 restTemplate.exchange(requestEntity, String.class);
