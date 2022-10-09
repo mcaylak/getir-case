@@ -1,5 +1,6 @@
 package com.getir.demo.common.request;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -17,6 +18,7 @@ import java.util.List;
 
 @Getter
 @Setter
+@Builder
 public class PlaceOrderRequest {
 
     @NotNull(message = "Customer Id must not be null")
